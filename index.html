@@ -23,16 +23,28 @@
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-3">
 
             </div>
             <div class="col-6">
-                <h1>Coding Quiz Challenge</h1>
-                <p>try to answer the following code-related questions within the time limit. Keep in mind that incorrect
-                    answers will penalize your scoretime by ten seconds! </p>
-                <button type="button" class="btn btn-primary">Start Quiz</button>
+               <p id ="coder">
+                   Coding Quiz Challenge
+                   <br>
+                try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+                    answers will penalize your scoretime by ten seconds!
+                <button id="startquiz" class="btn btn-primary">Start Quiz</button>
+            </p>
+    <div id= "quiz" style="display: none;">
+    <div id= "question"><p>question</p></div>
+    <div class="Btn-container">
+        <button type="button" class="btn btn-primary" id="A"></button>
+    <button type="button" class="btn btn-success" id="B"></button>
+    <button type="button" class="btn btn-danger" id="C"></button>
+    <button type="button" class="btn btn-warning" id="D"></button>
+    </div>
+    
             </div>
-            <div class="col">
+            <div class="col-3">
 
             </div>
         </div>
