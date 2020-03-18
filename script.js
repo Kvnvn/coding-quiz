@@ -47,7 +47,7 @@ function startTimer() {
 
 //questions will be in an array
 
-//startbutton."restart"
+//create a variable that obtains an array of all the questions and answers as well as the correct answer following
 var questions = [
     {
         q: "Commonly used data types DO NOT INCLUDE:",
@@ -88,6 +88,7 @@ var questions = [
 var LastQuestionIndex = questions.length - 1;
 var questionsIndex = 0;
 var currentQuestion = questions[questionsIndex];
+//make questions show up after one another 
 
 function renderQuestions() {
     currentQuestion = questions[questionsIndex];
@@ -97,17 +98,19 @@ function renderQuestions() {
     ChoiceC.textContent = currentQuestion.c;
     ChoiceD.textContent = currentQuestion.d;
 };
-
+//make a score to tally up "seconds left"
 var score;
+//add in eventlistener for correct or wrong answer
 
 BtnContainer.addEventListener("click", handleAnswerButtonClick);
+
 
 function handleAnswerButtonClick(event) {
 
     if (event.target.matches("button") && (event.target.textContent === currentQuestion.correct)) {
         resultsEL.textContent = "Correct";
     }
-
+// when wrong, add in pushiment with seconds left
     else {
         resultsEL.textContent = "Wrong"
         secondsLeft -= 5;
