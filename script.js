@@ -10,6 +10,10 @@ var ChoiceB = document.getElementById("B")
 var ChoiceC = document.getElementById("C")
 var ChoiceD = document.getElementById("D")
 var resultsEL = document.querySelector(".results")
+var submitPage = document.getElementById("submit-page");
+var form = document.getElementById("form");
+var saveName = document.getElementById("save-name");
+
 //adding eventlistener to start quiz
 // timer has to be set with  "start quiz button" in order for game to begin
 start.addEventListener("click", startQuiz);
@@ -81,7 +85,7 @@ var questions = [
 
 ];
 
-//var LastQuestionIndex = questions.length - 1;
+var LastQuestionIndex = questions.length - 1;
 var questionsIndex = 0;
 var currentQuestion = questions[questionsIndex];
 
@@ -94,14 +98,13 @@ function renderQuestions() {
     ChoiceD.textContent = currentQuestion.d;
 };
 
-var score = 0;
+var score;
 
 BtnContainer.addEventListener("click", handleAnswerButtonClick);
 
 function handleAnswerButtonClick(event) {
 
     if (event.target.matches("button") && (event.target.textContent === currentQuestion.correct)) {
-        score++;
         resultsEL.textContent = "Correct";
     }
 
@@ -111,7 +114,7 @@ function handleAnswerButtonClick(event) {
 
         if (secondsLeft <= 0) {
             timerElement.textContent = "Time:" + 0;
-            clearTimeout()
+            
         }
         else {
             timerElement.textContent = "Time: " + secondsLeft;
@@ -119,8 +122,38 @@ function handleAnswerButtonClick(event) {
 
         startTimer();
     }
-    if (questionsIndex < questions.length - 1) {
+    if (questionsIndex < LastQuestionIndex) {
         questionsIndex++;
         renderQuestions();
     }
+
+    else {
+        score = secondsLeft;
+
+        quiz.style.display = "none";
+
+        submitPage.style.display = "block";
+
+        // display final score
+        submitForm();
+    }
+};
+
+var list = JSON.parse(localStorage.getItem("list"));
+
+function submitForm() {
+    if (list === null) {
+        list = [];
+    }
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        // get input
+        var newItem = saveName.value.trim();
+        // add input to list
+        list.push(newItem)
+        // add to local storage
+        localStorage.setItem("list", JSON.stringify(list))
+        // navigate to list page
+        document.location.href = "highscore.html";
+    });
 };

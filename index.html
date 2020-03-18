@@ -27,30 +27,42 @@
 
             </div>
             <div class="col-6">
-               <p id ="coder">
-                   <b><u>Coding Quiz </b></u>
-                   <br>
+                <p id="coder">
+                    <b><u>Coding Quiz </b></u>
+                    <br>
 
-                try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+                    try to answer the following code-related questions within the time limit. Keep in mind that
+                    incorrect
                     answers will penalize your scoretime by ten seconds!
-                <button id="startquiz" class="btn btn-primary">Start Quiz</button>
-            </p>
-            <br>
-    <div id= "quiz" style="display: none;">
-    <div id= "question"><p>question</p></div>
-    <div class="Btn-container">
-        <button type="button" class="btn btn-primary" id="A"></button>
-    <button type="button" class="btn btn-success" id="B"></button>
-    <button type="button" class="btn btn-danger" id="C"></button>
-    <button type="button" class="btn btn-warning" id="D"></button>
-    </div>
-<div class = "results"></div>
+                    <button id="startquiz" class="btn btn-primary">Start Quiz</button>
+                </p>
+                <br>
+                <div id="quiz" style="display: none;">
+                    <div id="question">
+                        <p>question</p>
+                    </div>
+                    <div class="Btn-container">
+                        <button type="button" class="btn btn-primary" id="A"></button>
+                        <button type="button" class="btn btn-success" id="B"></button>
+                        <button type="button" class="btn btn-danger" id="C"></button>
+                        <button type="button" class="btn btn-warning" id="D"></button>
+                    </div>
+                    <div class="results"></div>
+                </div>
+                <div id="submit-page" style="display: none;">
+                    <h1>ALL DONE!</h1>
+                    <form class="form-inline" id="form">
+                        <input type="text" class="form-control mb-2 mr-sm-2" id="save-name" placeholder="Jane Doe">
+                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    </form>
+                </div>
             </div>
             <div class="col-3">
 
             </div>
         </div>
-        <script src="./script.js"></script>
+    </div>
+    <script src="./script.js"></script>
 </body>
 
 </html>
