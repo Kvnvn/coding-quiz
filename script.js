@@ -152,8 +152,12 @@ function submitForm() {
         event.preventDefault();
         // get input
         var newItem = saveName.value.trim();
+        var recordscore={
+            name:newItem,
+            score:secondsLeft
+        }
         // add input to list
-        list.push(newItem)
+        list.push(recordscore)
         // add to local storage
         localStorage.setItem("list", JSON.stringify(list))
         // navigate to list page
