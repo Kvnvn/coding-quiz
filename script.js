@@ -113,7 +113,7 @@ function handleAnswerButtonClick(event) {
 // when wrong, add in pushiment with seconds left
     else {
         resultsEL.textContent = "Wrong"
-        secondsLeft -= 5;
+        secondsLeft -= 10;
 
         if (secondsLeft <= 0) {
             timerElement.textContent = "Time:" + 0;
