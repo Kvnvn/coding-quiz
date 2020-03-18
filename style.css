@@ -1,3 +1,12 @@
+#coder{font-family:'Courier New', Courier, monospace; font-size:medium;text-align: center;}
 .col-6{text-align: center;margin-top: 150px;}
+h1{margin-left:-43px;}
+
 .navbar-brand{margin-right: 65rem;color: black;}
-.btn-primary{background-color: purple;border-color: purple;}
+.form-inline{margin-left:110px;}
+.btn-primary{background-color: purple;border-color: purple; margin-right: 24px;}
+.btn-sucess{margin-right: -25px;}
+.btn-danger{margin:10px}
+
+
+#question{font-family: 'Courier New', Courier, monospace;font-size: larger;}
