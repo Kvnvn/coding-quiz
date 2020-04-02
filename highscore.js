@@ -1,4 +1,6 @@
 // get the list from storage
+var clearScore = document.getElementById("clearScore")
+
 var list = JSON.parse(localStorage.getItem("list"))
 if (list === null) {
   list = [];
